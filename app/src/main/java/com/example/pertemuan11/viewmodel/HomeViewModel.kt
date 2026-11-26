@@ -31,10 +31,13 @@ class HomeViewModel(private val repositoryDataSiswa: RepositoryDataSiswa) : View
             listSiswa = try {
                 StatusUiSiswa.Success(repositoryDataSiswa.getDataSiswa())
             } catch (e: IOException) {
+                e.printStackTrace()
                 StatusUiSiswa.Error
             } catch (e: HttpException) {
+                e.printStackTrace()
                 StatusUiSiswa.Error
             } catch (e: Exception) {
+                e.printStackTrace()
                 StatusUiSiswa.Error
             }
         }

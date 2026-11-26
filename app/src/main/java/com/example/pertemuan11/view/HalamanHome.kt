@@ -75,7 +75,7 @@ fun HomeScreen(
         HomeBody(
             statusUiSiswa = viewModel.listSiswa,
             retryAction = viewModel::loadSiswa,
-            modifier = modifier
+            modifier = Modifier
                 .padding(innerPadding)
                 .fillMaxSize()
         )
@@ -102,7 +102,7 @@ fun HomeBody(
             )
             is StatusUiSiswa.Error -> ErrorScreen(
                 retryAction,
-                modifier = modifier.fillMaxSize()
+                modifier = Modifier.fillMaxSize()
             )
         }
     }
@@ -136,7 +136,7 @@ fun DaftarSiswa(
 
     modifier: Modifier = Modifier
 ) {
-    LazyColumn(modifier = Modifier) {
+    LazyColumn(modifier = modifier) {
         items(items = itemSiswa, key = { it.id }) { person ->
             ItemSiswa(
                 siswa = person,
